@@ -1,32 +1,32 @@
 import { Injectable } from '@nestjs/common';
-import { Cars } from './cars';
+import { Car } from './cars';
 
 @Injectable()
 export class CarsService {
-    cars:Cars[]=[
+    cars:Car[]=[
     {id:1, description:'Fusca'},
     {id:2, description:'Civic'},
-    {id:3, description:'Uno'}
+    {id:3, description:'Uno'},
     ];
 
     getAll(){
         return this.cars;
     }
-
+/*
     getByid(id: number){
         const car = this.cars.find((value) => value.id == id);
         return car;
     }
 
-    create(car:Cars){
+    create(car:Car){
 
     }
 
-    update(car:Cars){
+    update(car:Car){
 
     } 
 
     delete(id: number){
 
-    }
+    }*/ 
 }

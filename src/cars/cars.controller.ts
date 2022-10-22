@@ -1,6 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
-import { CreateCarDto, UpdateCarDto } from "../create-car.dto";
-import { Cars } from "./cars";
+import { Controller,Get, Param, Post, Put } from "@nestjs/common";
+import { Car } from "./cars";
 import { CarsService } from "./cars.service";
 
 @Controller('cars')
@@ -9,17 +8,17 @@ export class CarsController{
     constructor(
         private carsService: CarsService
     ){}
-    
+   
     @Get()
-    async getAll() : Promise<Cars[]> {
+    async getAll() : Promise <Car[]> {
         return this.carsService.getAll();
     }
-
+/* 
     @Get(':id')
-    async getById(@Param('id') id: number) : Promise<Cars> {
+    async getById(@Param('id') id: number) : Promise<Car> {
         return this.carsService.getByid(id);
     }
-
+*/
 
 
 
