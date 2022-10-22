@@ -2,17 +2,18 @@ import { Controller,Get, Param, Post, Put } from "@nestjs/common";
 import { Car } from "./cars";
 import { CarsService } from "./cars.service";
 
-@Controller('cars')
+@Controller()
 export class CarsController{
 
     constructor(
-        private carsService: CarsService
+        private readonly carsService: CarsService
     ){}
    
     @Get()
     async getAll() : Promise <Car[]> {
         return this.carsService.getAll();
     }
+
 /* 
     @Get(':id')
     async getById(@Param('id') id: number) : Promise<Car> {
